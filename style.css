@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.calculator {
+    width: 320px;
+    background-color: #000;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+.display input {
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    color: #fff;
+    font-size: 60px;
+    text-align: right;
+    border: none;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    height: 70px;
+    border-radius: 35px; /* Make them circular */
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.button.number, .button.dot {
+    background-color: #333;
+    color: #fff;
+}
+
+.button.number:active, .button.dot:active {
+    background-color: #555;
+}
+
+
+.button.operator {
+    background-color: #f09a36; /* Orange */
+    color: #fff;
+}
+
+.button.operator:active {
+    background-color: #d0812b;
+}
+
+.button.function {
+    background-color: #a5a5a5; /* Light gray */
+    color: #000;
+}
+
+.button.function:active {
+    background-color: #c5c5c5;
+}
+
+
+/* Specific button styles */
+.button.zero {
+    grid-column: span 2; /* Make zero button wider */
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+/* Make buttons visually distinct when active/pressed - using a common class for simplicity */
+.button.active {
+    filter: brightness(120%);
+}
